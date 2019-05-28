@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.apps.tb_app01.mapper.extend.UserExtendMapper">
+
+  <select id="pageQuery" resultType="com.briup.apps.tb_app01.bean.User">
+    select * from c_user
+    limit ${(page-1)*pageSize},${pageSize}
+  </select>
+
+  <select id="count" resultType="long">
+    select count(*) from c_user;
+  </select>
+</mapper>
